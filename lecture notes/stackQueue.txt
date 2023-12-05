@@ -1,0 +1,70 @@
+stack and queue are not data structures
+always add on top of stack, 
+push a, b, c, d, e into stack, a goes all the way to bottom
+etc
+you keep pushing on top
+pop, comes out from top to bottom - reverse order 
+so it pops out as e, d, c, b, A
+cmd z is undo, it's a stack
+every time you type its a stack and you remember things in the reverse order,
+so you can undo
+n denoting what is the next slot in the array we are gonna push
+n can start at index 0, push ints to make things faster
+push 77 where n is, then increment n
+push 8, n++ push 20 n++
+push(40) array access is a constant time all you do is n++
+O(1)
+[77, 8, 20, 33, 4, 7, 1, 5]
+pop - decrement n
+simply just change n cuz that's the top of stack
+n indicates top of stack
+when you reach end of array --overflow, what do you do
+you can resize array but that costs n running time
+copy everything over and continue pushing
+problem with underflow
+if n at index 0, and you pop 
+pop from empty stack --> x
+
+
+fixed.java notes 9/27
+
+stack size is n
+n + (2 + 4 + 6 + 8 ... + 2(n-1))
+n * 2n-2+2/2 = 2n^2/2 = n^2
+not good, this is when you're increasing the array size by 1
+
+n + n * (avg of first and last num)
+n + n * 2n -2n/2 = n + n^2
+
+doubling array size:
+n (1 push) + (2 + 4 (2 reads and 2 writes) + 8 + 16 + ... + n)
+~3n O(n)
+problem of wasting space
+if you push 1 more, pop it, you're back to midway, 
+would you shrink this array by half? yes becasue you don't need it
+only shrink by half if i'm down to a 1/4
+you will still have space to push / 2n to push there
+best case for pop is O(1)
+worst case for pop is ~2n + 2 --> O(n)
+
+can use a linkedlist to implement a stack 
+F
+today --> dream --> a --> have --> I
+
+creating new node is same as push, front points to new node
+
+remove from front / delete front is front = front.next
+
+have to move trhough the entire linkeledt to pop and remove
+if you have n items this is gonna take linear time which we don't like:
+F.
+I --> have --> a --> dream
+
+won't be tested on exceptions
+
+queue
+enqueue - dequeue
+f.              Old next  Last
+I --> have --> a --> dream
+insert into linkedlist at end and have extra pointer
+constant time
